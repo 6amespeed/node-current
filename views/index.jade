@@ -1,0 +1,10 @@
+link(rel='stylesheet', href='/styles/app.css')
+script(type="text/javascript", src="jquery.js")
+script(type="text/javascript", src="scripts/desktop.js", data-main="scripts/desktop")
+
+.body
+  block body
+    include mixins/pin-grid
+    .center
+      mixin pin-grid(10, 10)
+

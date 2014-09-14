@@ -1,0 +1,32 @@
+{
+  "name": "portal",
+  "title": "Portales",
+  "description": "An access portal.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "jade": "*",
+    "nodemon": "^1.0.19",
+    "coffee-script": "^1.8.0",
+    "less": "^1.7.5",
+    "browserify": "^5.11.1",
+    "coffeeify": "^0.7.0",
+    "browserify-shim": "^3.7.0",
+    "watchify": "^1.0.2",
+    "recess": "^1.1.9"
+  },
+  "scripts": {
+    "coffee-bundle": "browserify resources/scripts/coffee/desktop.coffee > resources/scripts/desktop.js",
+    "coffee-watch": "watchify resources/scripts/coffee/desktop.coffee -o resources/scripts/desktop.js",
+    "less-bundle": "lessc --compress ./resources/styles/less/desktop.less > ./resources/styles/app.css",
+    "less": "lessc --compress ./resources/styles/less/desktop.less > ./resources/styles/app.css",
+    "compile": "npm run coffee-watch && npm run less-bundle",
+    "start": "npm run compile && nodemon app.coffee"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify"
+    ]
+  }
+}

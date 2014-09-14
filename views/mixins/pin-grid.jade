@@ -1,0 +1,11 @@
+mixin pin-grid(rows, cols)
+  - var colWidth = 100/cols;
+  - var rowHeight = 100/rows;
+  - for (var i = 0; i < rows; ++i) {
+    .row(style="height: #{rowHeight}%; line-height: #{rowHeight}%;")
+      - for (var j = 0; j < cols; ++j) {
+        .col(style="width: #{colWidth}%;")
+          include ../includes/pin
+      - }
+  - }
+
