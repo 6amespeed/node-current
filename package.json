@@ -14,7 +14,8 @@
     "coffeeify": "^0.7.0",
     "browserify-shim": "^3.7.0",
     "watchify": "^1.0.2",
-    "recess": "^1.1.9"
+    "recess": "^1.1.9",
+    "redis": "^0.12.1"
   },
   "scripts": {
     "coffee-bundle": "browserify resources/scripts/coffee/desktop.coffee > resources/scripts/desktop.js",
